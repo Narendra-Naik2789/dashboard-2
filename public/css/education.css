@@ -1,0 +1,356 @@
+/* css/education.css */
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #121212, #1f1f1f);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #181818;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ef;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #ccc;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #0ef;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Education Section Styles */
+.education-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #0ef;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #0ef;
+  transform: translateX(-50%);
+}
+
+.edu-card {
+  position: relative;
+  width: 45%;
+  padding: 1.5rem;
+  background: #1e1e1e;
+  border-radius: 10px;
+  margin: 2rem 0;
+  transition: transform 0.3s ease;
+}
+
+.edu-card:nth-child(odd) {
+  margin-left: auto;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: #0ef;
+  border-radius: 50%;
+}
+
+.edu-card:nth-child(even)::before {
+  left: -10px;
+}
+
+/* Footer Styles */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  border-top: 1px solid #444;
+}
+/* css/education.css */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px #0ef; }
+  50% { box-shadow: 0 0 20px #0ef; }
+  100% { box-shadow: 0 0 5px #0ef; }
+}
+
+@keyframes timelineGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Updated Timeline Styles */
+.timeline::before {
+  animation: timelineGlow 3s ease infinite;
+  background: linear-gradient(
+    to bottom,
+    #0ef 0%,
+    rgba(0, 238, 255, 0.5) 50%,
+    #0ef 100%
+  );
+  background-size: 400% 400%;
+}
+
+/* Enhanced Education Cards */
+.edu-card {
+  transform-style: preserve-3d;
+  animation: cardEntrance 0.8s ease forwards;
+  opacity: 0;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.edu-card:nth-child(1) { animation-delay: 0.2s; }
+.edu-card:nth-child(2) { animation-delay: 0.4s; }
+.edu-card:nth-child(3) { animation-delay: 0.6s; }
+
+.edu-card:hover {
+  border-color: #0ef;
+  box-shadow: 0 0 30px rgba(0, 238, 255, 0.2);
+  transform: translateY(-5px) rotateZ(1deg);
+}
+
+.edu-card::before {
+  animation: neonPulse 1.5s ease infinite;
+}
+
+/* Animated Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      45deg,
+      rgba(0, 238, 255, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 238, 255, 0.05) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(0, 238, 255, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 238, 255, 0.05) 75%
+    );
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Enhanced Mobile Menu Animation */
+@media (max-width: 768px) {
+  .nav-links {
+    animation: menuSlide 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    transform: translateX(-100%);
+  }
+
+  @keyframes menuSlide {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  .edu-card {
+    animation: mobileCardEntrance 0.6s ease forwards;
+  }
+
+  @keyframes mobileCardEntrance {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Hover Effect for Logo */
+.logo {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0ef;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover::after {
+  transform: scaleX(1);
+}
+
+/* Scrolling Animation */
+.edu-card {
+  transition: all 0.4s ease;
+  will-change: transform;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #181818;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .edu-card {
+    width: 90%;
+    margin-left: 10% !important;
+  }
+
+  .edu-card::before {
+    left: -10px !important;
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .edu-card {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+/* Base hamburger and nav setup */
+.navbar {
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #0ef;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #181818;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 2rem;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+}
