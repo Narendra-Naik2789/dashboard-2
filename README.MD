@@ -2,6 +2,13 @@
 
 A responsive and secure personal portfolio dashboard built with a static HTML/CSS/JS frontend served via a Node.js and Express backend.
 
+# 🌐 Live Demo
+
+You can view the live deployed version of this project here:
+
+[🌍 Live View on Render](https://dashboard-y5eu.onrender.com)
+
+---
 
 ## ✨ Features
 
