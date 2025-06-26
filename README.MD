@@ -1,4 +1,4 @@
-# Akhilesh Hissal - Personal Dashboard Web App
+# Khushal Chavan - Personal Dashboard Web App
 
 A responsive and secure personal portfolio dashboard built with a static HTML/CSS/JS frontend served via a Node.js and Express backend.
 
@@ -6,7 +6,7 @@ A responsive and secure personal portfolio dashboard built with a static HTML/CS
 
 You can view the live deployed version of this project here:
 
-[🌍 Live View on Render](https://dashboard-y5eu.onrender.com)
+[🌍 Live View on Render]()
 
 ----
 
@@ -67,7 +67,7 @@ Install dependencies:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Akhilesh-Hissal2789/Dashboard.git
+git clone https://github.com/username/Dashboard.git
 cd akhilesh-dashboard
 
 Install dependencies:
