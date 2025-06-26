@@ -17,6 +17,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.disabled-link {
+  pointer-events: none;
+  color: gray;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 body {
   background: var(--background);
   opacity: 0;

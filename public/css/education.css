@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+.disabled-link {
+  pointer-events: none;
+  color: gray;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #121212, #1f1f1f);
@@ -232,6 +239,14 @@ body::before {
       transform: translateX(0);
     }
   }
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Hover Effect for Logo */
